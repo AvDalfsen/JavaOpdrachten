@@ -23,6 +23,9 @@ public class List {
 
         Random rd = new Random(); // creates a Random object
         int[] n = new int[10]; // creates an array object of 10 integers long
+        int max = 0;
+        int min1 = 101;
+        int min2 = 101;
         ArrayList<Integer> filter = new ArrayList<Integer>();
         ArrayList<Integer> two = new ArrayList<Integer>();
         ArrayList<Integer> three = new ArrayList<Integer>();
@@ -33,15 +36,39 @@ public class List {
         for (int i = 0; i < n.length; i++) { // so long as i is smaller than the length of n, add 1 to i.
             n[i] = rd.nextInt(100); // storing random integers in an array
         }
-        
+    
         System.out.print(Arrays.toString(n));
-        bubbleSort(n); // sorts the numbers in the array from lowest to highest
+        
+        //the highest
+        for (int i = 0; i < n.length; i++) {
+            if (n[i] > max) {
+                max = n[i];
+            }
+        }
+        System.out.println("\n\nThe highest number of the array is: " + max);
 
+        //lowest two
+        for (int i = 0; i < n.length; i++) {	
+            if (n[i] < min1) { 
+                min2 = min1;
+                min1 = n[i];
+            } else if (n[i] < min2) { 
+                min2 = n[i]; 
+            } 
+        }
+
+        System.out.print("\nThe first and second lowest numbers of the array are: " + min1 + " & " + min2);
+        System.out.println("\nThe sum of these two numbers is: " + (min1+min2));
+
+        //filter
+        System.out.println("\nThe even numbers are: " + filter);
         for (int i = 0; i < n.length; i++) {
             if(n[i] % 2 == 0){ // checks whether an entry in arr is divisible by 2
                 filter.add(n[i]); // adds those numbers to the filter array
             }
         }
+
+        //split
         for (int i = 0; i < n.length; i++) {
             if(n[i] % 2 == 0){ // checks whether an entry in arr is divisible by 2
                 two.add(n[i]); // adds those numbers to the filter array
@@ -57,15 +84,10 @@ public class List {
             }
         }
 
-        //the highest
-        System.out.println("\n\nThe highest number of the array is: " + n[9]); // the 10th number is now the highest
-        //the lowest two
-        System.out.println("\nThe two lowest numbers of the array are: " + n[0] + " & " + n[1]); // the 1st and 2nd numbers are now the lowest
-        //filter
-        System.out.println("\nThe even numbers are: " + filter);
-        //split
-        System.out.println("\nThe numbers divisible by 2 are: " + two + "\nThe numbers divisible by 3 are: " + three + "\nThe numbers divisible by 5 are: " + five + "\nThe remaining numbers are: " + rest + ".");
+        System.out.println("\nThe numbers divisible by 2 are: " + two + "\nThe numbers divisible by 3 are: " + three + "\nThe numbers divisible by 5 are: " + five + "\nThe remaining numbers are: " + rest);
+
         //sort
+        bubbleSort(n);
         System.out.println("\nThe sorted numbers are: " + Arrays.toString(n));
     }
 }
