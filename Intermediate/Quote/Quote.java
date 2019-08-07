@@ -32,7 +32,7 @@ public class Quote {
             quotecap = quote.substring(0,1).toUpperCase() + quote.substring(1) + ".";
         }
 
-        System.out.println("The quote of " + LocalDate.now() + " day #" + day + " of the year is: ");
+        System.out.println("The quote of " + LocalDate.now() + ", day #" + day + " of the year is: ");
         System.out.println("\"" + quotecap + "\"" + " by " + authorcap);
     }
 }
