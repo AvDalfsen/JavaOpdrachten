@@ -4,7 +4,7 @@
             "type": "java",
             "name": "CodeLens (Launch) - Example",
             "request": "launch",
-            "mainClass": "Example",
+            "mainClass": "FractionalsNew",
             "projectName": "java-opdrachten"
         }
     ]
