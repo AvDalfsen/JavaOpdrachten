@@ -16,13 +16,13 @@ public class DecisionTree {
     public static void main(String[] args) {
         DecisionTree decisionTree = new DecisionTree("decision-tree-data.txt");
         decisionTree.run();
-        decisionTree.readInput();
     }
     
   //If the program has issues reading or finding the file it will throw an error
     void run() {
         try {
             readFile();
+            readInput();
         } 
         catch (IOException FileNotFound) {
             System.out.println("Something went wrong while finding or reading the file. Please ensure it exists and is accessible.");
