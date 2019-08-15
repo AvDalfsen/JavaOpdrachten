@@ -55,8 +55,13 @@ class Robot{
     }
 
     void moveForward(int speed){
-        exeList.add(4);
-        spdList.add(speed);
+        if(speed > 0 && speed < 4) {
+            exeList.add(4);
+            spdList.add(speed);
+        }
+        else{
+            System.out.println("Please enter a speed of 1, 2, or 3. The robot cannot go faster or slower.");
+        }
     }
 
     void moveBackward(){
