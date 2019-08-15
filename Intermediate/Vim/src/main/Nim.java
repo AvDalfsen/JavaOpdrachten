@@ -60,21 +60,15 @@ public class Nim {
 	int getInput() {
 		Scanner scanner = new Scanner(System.in);
 		int input = scanner.nextInt();
-		if(input > 0 && input < 5 && checkInputVsMatchesLeft(input) == true) return input;
+		if(input > 0 && input < 5 && input > matchesLeft) return input;
 		else {
 			System.out.println("\nYou can't pick up more than 4 matches. \nNor can you take none or put any back. \nNor can you take any more than there are left. \nPlease try again.");
 			turnDecider(playerTurn,noOfPlayers);
 		}
 		return 1; //Should never return anything, but is required due to the conditional. Any more elegant ways of dealing with this?
 					//2nd comment: originally 'returned' 0. However, when set to 0 it will somehow store the player and number of times that player made an error (too high or too low)
-					//and go through gameState as many times as they had lost. Haven't a clue how or why, but having this higher than 0 somehow solves it. Obviously means that the code
+					//and go through gameState as many times when the game ended. Haven't a clue how or why, but having this higher than 0 somehow solves it. Obviously means that the code
 					//can and will be reached, but I don't understand why.
-	}
-	
-	boolean checkInputVsMatchesLeft(int input) {
-		boolean valid = false;
-		if(input <= matchesLeft) valid = true;
-		return valid;
 	}
 	
 	void computerMove() {
