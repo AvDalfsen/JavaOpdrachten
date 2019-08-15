@@ -1,5 +1,7 @@
 import java.util.*;
 
+//Asignment was incomplete. *3 + 1 when the number is uneven, not regardless of evenness.
+
 public class CollatzSequence{
     public static void main(String[] args){
         Random rand = new Random();
@@ -11,11 +13,12 @@ public class CollatzSequence{
             if(posRandInt % 2 == 0){
                 posRandInt = posRandInt / 2;
             }
-            posRandInt = 3 * posRandInt + 1;
+            else {posRandInt = 3 * posRandInt + 1;
+            }
             System.out.println(posRandInt);
         }
 
         System.out.println("The number is now 1. The Collatz Sequence has prevailed!");
 
     }
-} //even with type long it doesn't seem like Java is built for this. Overflows and thus negative numbers to the max!
+}
